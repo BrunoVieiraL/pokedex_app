@@ -27,7 +27,7 @@ class DetailPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image(
-                    image: NetworkImage(pokemon.img),
+                    image: NetworkImage(pokemon.img, scale: 20),
                   ),
                   Text('Altura: ${pokemon.height}'),
                   Text('Peso: ${pokemon.weight}'),
