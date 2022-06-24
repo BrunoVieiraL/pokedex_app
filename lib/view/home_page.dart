@@ -50,12 +50,15 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.all(0.0),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.of(context)
-                            .push(MaterialPageRoute(builder: (context) {
-                          return DetailPage(
-                            pokemon: pkmn,
-                          );
-                        }));
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) {
+                              return DetailPage(
+                                pokemon: pkmn,
+                              );
+                            },
+                          ),
+                        );
                       },
                       child: Hero(
                         tag: pkmn.img,
@@ -66,7 +69,9 @@ class _HomePageState extends State<HomePage> {
                               SizedBox(
                                 height: 100,
                                 width: 100,
-                                child: Image(image: NetworkImage(pkmn.img)),
+                                child: Image(
+                                  image: NetworkImage(pkmn.img),
+                                ),
                               ),
                               Text(
                                 pkmn.name,

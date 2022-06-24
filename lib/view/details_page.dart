@@ -22,12 +22,12 @@ class DetailPage extends StatelessWidget {
             width: MediaQuery.of(context).size.width - 20,
             child: Card(
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20)),
+                  borderRadius: BorderRadius.circular(20),),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Image(
-                    image: NetworkImage(pokemon.img, scale: 20),
+                    image: NetworkImage(pokemon.img),
                   ),
                   Text('Altura: ${pokemon.height}'),
                   Text('Peso: ${pokemon.weight}'),
@@ -67,7 +67,7 @@ class DetailPage extends StatelessWidget {
                                 nextEvo.name as String,
                               ),
                               onSelected: (b) {},
-                            ))
+                            ),)
                         .toList(),
                   ),
                 ],
