@@ -1,16 +1,13 @@
 # poke_app
+This app was made for pratice consume API and the Json format as well.
 
-A new Flutter project.
+The first image is the home page of the app and has a list with the 151 first Pokémon.
+The second image show details about the Pokémon that have been tap.
 
-## Getting Started
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73727609/175563179-99c01013-b270-437a-a205-f21d41d70655.png" width="350px" height ="550" />
+</div>
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<div align="center">
+<img src="https://user-images.githubusercontent.com/73727609/175563725-77d1c0e5-f812-4cd3-a310-a7b388dbd0bb.png" width="350px" height ="550" />
+</div>
