@@ -1,4 +1,4 @@
-# poke_app
+# pokedex_app
 
 The first image is the home page of the app and has a list with the 151 first Pokémon.
 <br>
