@@ -1,5 +1,4 @@
-# poke_app
-This app was made for pratice consume API and the Json format as well.
+# pokedex_app
 
 The first image is the home page of the app and has a list with the 151 first Pokémon.
 <br>
