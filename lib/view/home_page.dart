@@ -15,7 +15,8 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   String url =
       'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
-  PokeHub pokeHub = PokeHub(pokemon: []);
+  var pokeHub = PokeModel(pokemon: []);
+
   @override
   void initState() {
     super.initState();
@@ -27,7 +28,7 @@ class _HomePageState extends State<HomePage> {
     try {
       var response = await http.get(Uri.parse(url));
       var decodedResponse = jsonDecode(response.body);
-      pokeHub = PokeHub.fromJson(decodedResponse);
+      pokeHub = PokeModel.fromJson(decodedResponse);
     } finally {
       client.close();
     }
@@ -40,7 +41,6 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         title: const Text('Pokedex'),
       ),
-      drawer: const Drawer(),
       body: GridView.count(
           shrinkWrap: true,
           crossAxisCount: 3,
