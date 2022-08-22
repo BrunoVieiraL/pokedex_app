@@ -1,13 +1,13 @@
-class PokeHub {
+class PokeModel {
   late List<Pokemon> pokemon;
 
-  PokeHub({required this.pokemon});
+  PokeModel({required this.pokemon});
 
-  PokeHub.fromJson(Map<String, dynamic> json) {
+  PokeModel.fromJson(Map<String, dynamic> json) {
     if (json['pokemon'] != null) {
       pokemon = <Pokemon>[];
-      json['pokemon'].forEach((v) {
-        pokemon.add(Pokemon.fromJson(v));
+      json['pokemon'].forEach((value) {
+        pokemon.add(Pokemon.fromJson(value));
       });
     }
   }
@@ -53,8 +53,8 @@ class Pokemon {
     weaknesses = json['weaknesses'].cast<String>();
     if (json['next_evolution'] != null) {
       nextEvolution = <NextEvolution>[];
-      json['next_evolution'].forEach((v) {
-        nextEvolution?.add(NextEvolution.fromJson(v));
+      json['next_evolution'].forEach((value) {
+        nextEvolution?.add(NextEvolution.fromJson(value));
       });
     } else {
       nextEvolution = [];
@@ -71,7 +71,7 @@ class Pokemon {
     data['height'] = height;
     data['weight'] = weight;
     data['weaknesses'] = weaknesses;
-    data['next_evolution'] = nextEvolution?.map((v) => v.toJson()).toList();
+    data['next_evolution'] = nextEvolution?.map((value) => value.toJson()).toList();
     return data;
   }
 }
