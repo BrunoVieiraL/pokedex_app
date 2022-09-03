@@ -1,7 +1,5 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
+import 'package:poke_app/controller/pokemon_controller.dart';
 import 'package:poke_app/model/pokemon_model.dart';
 import 'package:poke_app/view/details_page.dart';
 
@@ -13,25 +11,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  String url =
-      'https://raw.githubusercontent.com/Biuni/PokemonGO-Pokedex/master/pokedex.json';
   var pokeList = PokeModel(pokemon: []);
 
   @override
   void initState() {
     super.initState();
-    fetchData();
+    getData();
   }
 
-  fetchData() async {
-    var client = http.Client();
-    try {
-      var response = await http.get(Uri.parse(url));
-      var decodedResponse = jsonDecode(response.body);
-      pokeList = PokeModel.fromJson(decodedResponse);
-    } finally {
-      client.close();
-    }
+  getData() async {
+    pokeList = await PokemonController().call();
     setState(() {});
   }
 
@@ -87,7 +76,7 @@ class _HomePageState extends State<HomePage> {
               .toList()),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          fetchData();
+          getData();
         },
         child: const Icon(Icons.refresh),
         backgroundColor: Colors.cyan,
