@@ -11,7 +11,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  var pokeList = PokeModel(pokemon: []);
+  var _pokeList = PokeModel(pokemon: []);
 
   @override
   void initState() {
@@ -20,7 +20,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   getData() async {
-    pokeList = await PokemonController().call();
+    _pokeList = await PokemonController().call();
     setState(() {});
   }
 
@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
       body: GridView.count(
           shrinkWrap: true,
           crossAxisCount: 3,
-          children: pokeList.pokemon
+          children: _pokeList.pokemon
               .map((pkmn) => Padding(
                     padding: const EdgeInsets.all(0.0),
                     child: GestureDetector(
